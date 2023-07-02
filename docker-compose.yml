@@ -1,0 +1,10 @@
+# FROM golang:alpine
+version: '3'
+
+services:
+      app:
+        image: golang:alpine
+        volumes:
+            - ./script:/go/script
+            - ./builded:/go/builded
+        command: go build -o /go/builded /go/script/print.go
